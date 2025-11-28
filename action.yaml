@@ -5,6 +5,10 @@ inputs:
     description: 'The Python version to install. Defaults to the version stated in the pyproject.toml file.'
     required: false
     default: ''
+  poetry_version:
+    description: 'The Poetry version to install. Defaults to 1.8.5'
+    required: false
+    default: '1.8.5'
   project_root:
     description: 'The location of the python project root. Defaults to the root of the project'
     required: false
@@ -41,6 +45,7 @@ runs:
       id: setup-poetry
       uses: snok/install-poetry@v1.4.1
       with:
+        version: ${{ inputs.poetry_version }}
         virtualenvs-create: true
         virtualenvs-in-project: true
         installer-parallel: true
