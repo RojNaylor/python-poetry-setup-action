@@ -51,6 +51,7 @@ runs:
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
         echo "$HOME/.local/bin" >> $GITHUB_PATH
+        export PATH="$HOME/.local/bin:$PATH"
  
         poetry config virtualenvs.create true
         poetry config virtualenvs.in-project true
